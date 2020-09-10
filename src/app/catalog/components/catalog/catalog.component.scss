@@ -1,0 +1,17 @@
+@import '../../../../assets/scss/common.scss';
+
+.catalog-sidebar {
+  width: 140px;
+  padding: 50px 30px;
+  height: calc(100vh - 170px);
+  background: rgb(123, 31, 162);
+  background: linear-gradient(0deg, rgba(123, 31, 162, 0.006039915966386533) 0%, rgba(123, 31, 162, 0.04245448179271705) 100%);
+  button{
+    margin: 5px 0;
+    border-radius: 0 !important;
+  }
+}
+
+.active{
+  border-bottom: 2px $primary-color solid;
+}

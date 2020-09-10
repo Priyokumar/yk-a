@@ -1,0 +1,37 @@
+.row{
+    align-items: flex-end;
+}
+
+.sub-categories{
+    font-size: 16px;
+
+}
+
+.customizable{
+    display: flex;
+    flex-direction: column;
+}
+
+.sub-categories-content{
+    min-height: 90px;
+    margin-top: 10px;
+    .sub-categories-card{
+        border-radius: 2px;
+        padding: 10px 20px;
+        background-color: #575757;
+        margin: 10px 0;
+    }
+}
+
+.content{
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    .form-content{
+        padding: 0 20px;
+    }
+
+    .btn{
+        width: 130px;
+    }
+}

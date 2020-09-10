@@ -1,0 +1,27 @@
+.categories-content{
+    min-height: 90px;
+    max-height: 400px;
+    overflow-y: auto;
+    margin-top: 10px;
+    .categories-card{
+        border-radius: 2px;
+        padding: 10px 20px;
+        background-color: #484747;
+        margin: 10px 0;
+    }
+    .categories-card:hover{
+        background-color: #575656;
+        cursor: pointer;
+    }
+
+    .title{
+        font-weight: 500;
+        color: rgb(228, 228, 228);
+      }
+  
+      .subtitle{
+        font-size: 13px;
+        color: rgb(156, 156, 156);
+        font-weight: 300;
+      }
+}

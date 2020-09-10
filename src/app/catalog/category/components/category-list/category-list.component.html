@@ -1,0 +1,26 @@
+<div class="container">
+  <div class="flex justify-content-between">
+    <h2>Categories</h2>
+    <button mat-icon-button (click)="close()">
+      <mat-icon>close</mat-icon>
+    </button>
+  </div>
+
+  <div class="w-100">
+    <mat-form-field appearance="standard" class="w-100">
+      <input matInput placeholder="Search by name...">
+      <mat-icon matSuffix>search</mat-icon>
+    </mat-form-field>
+  </div>
+
+  <div class="pt-2 categories-content">
+    <div class="flex justify-content-between categories-card" *ngFor="let category of categories" (click)="onClickCategory(category)">
+      <div class="flex flex-column">
+        <div class="title">{{category.name}}</div>
+        <div class="subtitle">{{category.description}}</div>
+      </div>
+      <div *ngIf="category?.products">{{category?.products?.length}} products</div>
+    </div>
+  </div>
+
+</div>

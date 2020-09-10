@@ -1,0 +1,31 @@
+
+/* Color Variables */
+$primary-color: #7b1fa2;
+$accent-color:#69f0ae;
+$warn-color:#f44336;
+
+/* Variables */
+$header-height: 64px;
+$sidebar-width:280px;
+
+/* Font color*/
+.primary-font{ 
+    color: $primary-color;
+}
+.accent-font{
+    color: $accent-color;
+}
+.warn-font{
+    color: $warn-color;
+}
+
+/* Background color*/
+.bg-primary{
+    background-color: $primary-color;
+}
+.bg-accent{
+    background-color: $accent-color;
+}
+.bg-warn{
+    background-color: $warn-color;
+}

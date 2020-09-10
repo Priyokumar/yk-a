@@ -1,0 +1,10 @@
+<div class="flex flex-column justify-content-between">
+    <div>
+        <div class="title">{{data.title}}</div>
+        <div class="subtitle pt-2">{{data.message}}</div>
+    </div>
+    <div class="flex justify-content-end pt-4">
+        <button mat-button (click)="close()" class="mr-3">Cancel</button>
+        <button mat-raised-button color="accent" (click)="ok()">Ok</button>
+    </div>
+</div>

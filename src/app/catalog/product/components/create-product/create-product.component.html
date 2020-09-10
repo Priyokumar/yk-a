@@ -1,0 +1,84 @@
+<div class="content flex  flex-column justify-content-between">
+
+  <div>
+    <div class="flex justify-content-between">
+      <h2>Add Product</h2>
+      <button mat-icon-button (click)="close()">
+        <mat-icon>close</mat-icon>
+      </button>
+    </div>
+    <div class="flex form-content">
+      <div class=" p-4">
+        <div class="row">
+
+          <div class="col-md-12">
+            <mat-form-field class="w-100">
+              <mat-label>Category</mat-label>
+              <mat-select [formControl]="categoryFormCtrl">
+                <mat-option *ngFor="let category of categories" [value]="category.id">
+                  {{category.name}}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+
+          <div class="col-md-12">
+            <mat-form-field appearance="standard" class="w-100">
+              <mat-label>Name</mat-label>
+              <input matInput placeholder="Name" [formControl]="nameFormCtrl">
+            </mat-form-field>
+          </div>
+          <div class="col-md-12">
+            <mat-form-field class="w-100">
+              <mat-label>Unit</mat-label>
+              <mat-select [formControl]="unitFormCtrl" #selected (selectionChange)="onUnitChange(selected.value)">
+                <mat-option *ngFor="let item of units" [value]="item">{{item}}</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+
+          <div class="col-md-12 mb-2">
+            <mat-form-field appearance="standard" class="w-100">
+              <mat-label>Price/{{unitFormCtrl.value}}</mat-label>
+              <input type="number" matInput [placeholder]="'Price/' +unitFormCtrl.value" [formControl]="priceFormCtrl">
+            </mat-form-field>
+          </div>
+          <div class="col-md-12 customizable mb-3">
+            <mat-label class="pb-1">Customizable:</mat-label>
+            <mat-radio-group aria-label="Select an option" [formControl]="customizableFormCtrl">
+              <mat-radio-button [value]="item.value" class="pr-2" *ngFor="let item of yesNo">{{item.name}}
+              </mat-radio-button>
+            </mat-radio-group>
+          </div>
+
+          <div class="col-md-12" *ngIf="showWeights && customizableFormCtrl.value">
+            <mat-form-field class="w-100">
+              <mat-label>Weights</mat-label>
+              <mat-select [formControl]="weightsFormCtrl" multiple>
+                <mat-option *ngFor="let item of weights" [value]="item">{{item}}</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+
+          <div class="col-md-12" *ngIf="showPcs && customizableFormCtrl.value">
+            <mat-form-field class="w-100">
+              <mat-label>Pieces</mat-label>
+              <mat-select [formControl]="pcsFormCtrl" multiple>
+                <mat-option *ngFor="let item of pcs" [value]="item">{{item}}</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="flex justify-content-center">
+    <button mat-raised-button class="mr-3 btn" color="warn" (click)="close()">Cancel</button>
+    <button mat-raised-button class="btn" color="accent" (click)="onClickSave()">Add</button>
+  </div>
+
+
+</div>
